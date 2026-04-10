@@ -36,9 +36,34 @@
 - **Construct Tree from Traversals:** Build a unique tree using Inorder and Preorder/Postorder arrays.
 - **Zig-zag Traversal:** Print nodes in alternating left-to-right and right-to-left order.
 
+---
+
+## 🌳 BEYOND SYLLABUS (MASTER SET)
+
+### 1. Pattern Mastery (Recursive Thinking)
+- **DFS Recursive Template:** Implement a function that returns a value from its children (e.g., `Max Depth`).
+- **BFS (Level-wise):** Print the average value of each level.
+- **Divide & Conquer:** Check if a tree is a **Subtree** of another tree.
+
+### 2. Binary Tree Variations
+- **Full vs. Complete Check:** Write code to verify if a tree is Full or Complete.
+- **Perfect Tree Height:** Given `n` nodes, is it possible to form a Perfect Binary Tree?
+
+### 3. Heap Operations (MUST DO) ⭐⭐⭐
+- **Build Heap:** Convert an unsorted array into a Max-Heap in $O(n)$.
+- **Heap Insertion & Deletion:** Implement both for a Min-Heap.
+- **K-th Largest Element:** Solve using a Min-Heap of size `k`.
+- **Heap Sort:** Implement the full sorting algorithm.
+
+### 4. Advanced Tree Logic
+- **AVL Single Rotation:** Implement `leftRotate` and `rightRotate`.
+- **Optimization:** Solve "Check if Balanced" in a single $O(n)$ traversal.
+
+---
+
 ## 🎯 TREE "DO OR DIE" MASTER SET
 1. **Traversals** ⭐⭐⭐
 2. **BST Insert/Delete** ⭐⭐⭐
 3. **Height of Tree** ⭐⭐⭐
-4. **Level Order Traversal** ⭐⭐
+4. **Build Max-Heap** ⭐⭐⭐
 5. **LCA** ⭐⭐

@@ -32,11 +32,31 @@ This document contains a curated list of array problems, ranging from basic oper
 - **Search in 2D:** Search for a target value in a row-wise and column-wise sorted matrix.
 
 ## 5. Advanced Challenges
-- **Kadane's Algorithm:** Find the contiguous subarray (containing at least one number) which has the largest sum.
-- **Maximum Product Subarray:** Find the subarray with the maximum product.
-- **Merge Sorted Arrays:** Merge two sorted arrays into a third sorted array without extra sorting.
-- **Dutch National Flag Problem:** Sort an array containing only 0s, 1s, and 2s in $O(n)$ time.
 - **Trapping Rain Water:** Given an array of heights, calculate how much water it can trap after raining.
+
+---
+
+## 🌳 BEYOND SYLLABUS (MASTER SET)
+
+### 1. Pattern Mastery (High Efficiency)
+- **Two Pointers**: Find if a sorted array has two elements that sum to `target`.
+- **Sliding Window**: Find the maximum sum of any contiguous subarray of size `k`.
+- **Prefix Sum**: Given `L` and `R`, return the sum of elements from index `L` to `R` in $O(1)$.
+
+### 2. Expert Subarray Problems
+- **Kadane's Algorithm ⭐⭐⭐**: Find the maximum sum of a contiguous subarray.
+- **Subarray Sum Equals K**: Count total subarrays with sum `k` (using hashing).
+- **Minimum Window Substring**: (Advanced) Find the smallest substring containing all characters.
+
+### 3. 2D Matrix Optimization ⭐⭐
+- **Rotate Matrix in-place**: Rotate a square matrix 90 degrees clockwise without extra space.
+- **Search in 2D**: Search for a target in a row-wise and column-wise sorted matrix.
+
+### 4. Logic & Tricks
+- **Single Number**: Find the element that appears once in an array where every other element appears twice (using XOR).
+- **Find the Missing Number**: Find the missing number in an array of $1 \dots n$.
+
+---
 
 ## 🔥 EXAM ESSENTIALS (HIGH CHANCE)
 - **Insert at Position** ⭐

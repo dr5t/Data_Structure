@@ -168,6 +168,50 @@ arr[0] = temp;
 
 ---
 
+## 5.1 Beyond Syllabus: High-Weightage Array Patterns
+
+### 1. Two Pointers ⭐⭐⭐
+Uses two pointers to process elements, often saving a nested loop.
+- **Opposite Directions**: `left=0, right=n-1`. Used for **Two Sum** (on sorted arrays) or **Reversing**.
+- **Same Direction (Fast & Slow)**: `slow=0, fast=0`. Used for **Removing Duplicates** or **Detecting Cycles**.
+
+### 2. Sliding Window ⭐⭐⭐
+Used to find subarrays that satisfy a condition.
+- **Fixed Size**: Maintain a sum of $k$ elements. When window moves, subtract `arr[i-k]` and add `arr[i]`.
+- **Variable Size**: Expand `right` to find a condition; shrink `left` to optimize.
+
+### 3. Prefix Sum ⭐⭐
+Precomputing a sum array where `P[i] = arr[0] + ... + arr[i]`.
+- **Range Sum**: Sum from `L` to `R` = `P[R] - P[L-1]`.
+- **Time Complexity**: $O(1)$ query after $O(n)$ precomputation.
+
+---
+
+## 5.2 Advanced 2D Matrix: Rotate In-Place (90°)
+
+**Logic**: To rotate a matrix $90^\circ$ clockwise:
+1.  **Transpose** the matrix (swap $A[i][j]$ with $A[j][i]$).
+2.  **Reverse** each row.
+- **Result**: In-place rotation with $O(1)$ extra space!
+
+---
+
+## 5.3 Array Optimization Tricks
+
+### 1. XOR Property
+- `x ^ x = 0`
+- `x ^ 0 = x`
+- **Use case**: Find the single non-repeating element in an array where every other element repeats twice. Simply XOR all elements!
+
+### 2. XOR of first $N$ numbers
+A fast way to find the XOR sum from $1 \dots n$ without a loop:
+- If $n \% 4 == 0$: Result is $n$.
+- If $n \% 4 == 1$: Result is $1$.
+- If $n \% 4 == 2$: Result is $n+1$.
+- If $n \% 4 == 3$: Result is $0$.
+
+---
+
 ## 6. Linked List (Must Practice)
 
 ### A. Insert at Position
@@ -285,6 +329,94 @@ head = prev;
 ### Level 5: Hard / Interview Concepts
 - **Zig-zag Traversal**: Use two stacks to change directions at each level.
 - **Construct from Traversals**: Use Preorder to find Root and Inorder to find Left/Right boundaries.
+
+---
+
+## 8.5 Beyond Syllabus: Tree Variations (Visualized)
+
+### 1. Full Binary Tree
+Every node has either **0 or 2 children**. No node has only 1 child.
+```text
+      ( )           ( )
+     /   \         /   \
+   ( )   ( )     ( )   ( )
+                /   \
+              ( )   ( )
+```
+
+### 2. Complete Binary Tree
+All levels are completely filled except possibly the last level, and the last level has all nodes as far **left** as possible.
+```text
+      ( )           ( )
+     /   \         /   \
+   ( )   ( )     ( )   ( )
+  /             /   \
+( )           ( )   ( )
+```
+
+### 3. Perfect Binary Tree
+All internal nodes have two children and all leave nodes are at the **same level**.
+```text
+      (1)
+     /   \
+   (2)   (3)
+  /  \   /  \
+(4)  (5)(6) (7)
+```
+
+### 4. Skewed Tree
+A tree where every node has only one child (Left-skewed or Right-skewed). Essentially a **Linked List**.
+
+---
+
+## 8.6 Advanced Tree Types
+
+### 1. AVL Tree (Self-Balancing) ⭐
+A BST where the height difference (Balance Factor) between left and right subtrees is at most **1**.
+- **Balance Factor** = `height(left) - height(right)`.
+- If $|BF| > 1$, perform **Rotations**:
+  - **LL / RR**: Single rotations.
+  - **LR / RL**: Double rotations.
+
+### 2. Heap (Min-Heap / Max-Heap) ⭐⭐
+A **Complete Binary Tree** that satisfies the Heap Property.
+- **Max-Heap**: Parent $\ge$ Children (Root is largest).
+- **Min-Heap**: Parent $\le$ Children (Root is smallest).
+- **Storage**: Usually stored in an **Array** for efficiency.
+  - Parent of `i`: `(i-1)/2`
+  - Left child: `2*i + 1`
+  - Right child: `2*i + 2`
+
+### 3. Trie (Prefix Tree)
+Used for efficient string searching. Each node represents a character.
+- *Use case*: Auto-complete, Dictionary.
+
+---
+
+## 8.7 Heap Mastery (Operations)
+
+### 1. Heapify (The Core)
+The process of rearranging a tree to maintain the heap property.
+- **Complexity**: $O(\log n)$ for a single node, but building a heap from an array takes $O(n)$.
+
+### 2. Heap Sort
+1. Build a Max-Heap from the array.
+2. Swap the root (max element) with the last element.
+3. Reduce heap size and `heapify` the root.
+4. Repeat until sorted.
+- **Complexity**: $O(n \log n)$.
+
+---
+
+## 8.8 Tree Optimization Patterns
+
+### 1. Reducing Traversal (O(n²) → O(n))
+Many tree problems (like Diameter or Balanced Check) involve recalculating height inside a recursive call.
+- **Inefficient**: `isBalanced(root)` calls `height(left)` and `height(right)`, then recurses.
+- **Efficient**: Use a **single traversal** where the function returns both the height and the logic result (e.g., using a pointer or a struct).
+
+### 2. Memoization on Trees
+Store results of sub-problems to avoid repeated work (common in DP on Trees).
 
 ---
 
