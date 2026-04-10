@@ -109,8 +109,46 @@ Stashing previously calculated values in an array so you never calculate the sam
 **Example**: `[5, 1, 4]`
 1. **Initial**: `[5 | 1, 4]` (left side is sorted)
 2. **Insert 1**: Compare `1` with `5`. Pull `1` to the front: `[1, 5 | 4]`
-3. **Insert 4**: Compare `4` with `5`. Pull `4` between `1` and `5`: `[1, 4, 5 | ]`
 4. **Result**: `[1, 4, 5]`
+
+---
+
+## 4.5 Beyond Syllabus: High-Weightage Searching Patterns
+
+### 1. Rotated Binary Search ⭐⭐⭐
+Used to search in a sorted array that has been rotated (e.g., `[4, 5, 6, 7, 0, 1, 2]`).
+- **Logic**: At any point, at least one half of the array (left or right) MUST be sorted. 
+  - If `arr[low] <= arr[mid]`, left half is sorted.
+  - Else, right half is sorted.
+- **Complexity**: $O(\log n)$.
+
+### 2. First & Last Occurrence ⭐⭐
+Modify Binary Search to keep searching even after finding the element.
+- **First**: If `arr[mid] == target`, move `high = mid - 1` to check left side.
+- **Last**: If `arr[mid] == target`, move `low = mid + 1` to check right side.
+
+### 3. Binary Search on Answer (The "Peak" Logic)
+Binary search isn't just for sorted arrays. It can find a **Peak Element** (greater than neighbors) by checking the slope:
+- If `arr[mid] < arr[mid+1]`, you are on an upward slope; search the **right** half.
+- Else, you are on a downward slope; search the **left** half.
+
+---
+
+## 4.6 Stable vs Unstable Sorting
+
+| Feature | Stable Sorting | Unstable Sorting |
+| :--- | :--- | :--- |
+| **Logic** | Maintains relative order of duplicate elements. | May change the relative order of duplicates. |
+| **Examples** | Merge Sort, Insertion Sort, Bubble Sort. | Quick Sort, Heap Sort, Selection Sort. |
+| **Use Case** | When sorting data on multiple keys (e.g., Sort by Name, then by Age). | General purpose sorting where relative order doesn't matter. |
+
+---
+
+## 4.7 QuickSelect Algorithm
+Used to find the **K-th smallest/largest** element in an array.
+- **Logic**: Based on Quick Sort's `partition` function. 
+- **Efficiency**: Instead of sorting the whole array ($O(n \log n)$), it only recurses into one half.
+- **Complexity**: average $O(n)$, worst $O(n^2)$.
 
 ---
 
