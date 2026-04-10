@@ -24,6 +24,12 @@ Stacks are a fundamental LIFO (Last-In-First-Out) data structure. Explore implem
 - **Stock Span Problem:** Calculate the stock span for each day given daily prices.
 - **Min-Stack:** Design a stack that supports `push`, `pop`, `top`, and `getMin` in constant $O(1)$ time.
 
+## 🔥 MOST IMPORTANT REPEATABLE QUESTIONS
+- **Stack Operations (Push/Pop/Peek)**
+- **Balanced Parentheses using Stack**
+- **Infix to Postfix Conversion**
+- **Implement Queue using Stacks**
+
 ## C-Specific Tips
 > [!TIP]
 > - In an array implementation, the `top` variable should usually start at `-1`.
