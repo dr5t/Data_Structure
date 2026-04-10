@@ -27,11 +27,12 @@ Explore various queue implementations and algorithmic problems. Queues follow th
 - **Circular Tour (Gas Station Problem):** Find the starting point to complete a circular tour where you have a set of gas stations.
 - **LRU Cache (Concept):** Discuss how a queue (specifically a Deque) is used in the implementation of an LRU cache.
 
-## 🔥 MOST IMPORTANT REPEATABLE QUESTIONS
-- **Circular Queue Implementation (Array-based)**
-- **Queue using Stacks**
-- **Priority Queue Basics**
-- **Sliding Window Maximum (using Deque)**
+## 🔥 EXAM ESSENTIALS (IMPORTANT)
+- **Implement Queue using Array**
+- **Enqueue & Dequeue Operations** ⭐
+- **Check Overflow & Underflow**
+- **Display Queue**
+- **Circular Queue Implementation** ⭐⭐
 
 ## C-Specific Tips
 > [!IMPORTANT]

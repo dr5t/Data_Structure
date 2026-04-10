@@ -33,11 +33,15 @@ This document covers questions for Singly, Doubly, and Circular Linked Lists, wi
 - **Flattening:** Flatten a multi-level linked list.
 - **LRU Cache:** Implement an LRU cache using a Doubly Linked List for order and a Hash Map (or simplified array-based hash) for access.
 
-## 🔥 MOST IMPORTANT REPEATABLE QUESTIONS
-- **Linked List Insertion & Deletion**
-- **Reverse a Linked List (Iterative & Recursive)**
-- **Find the Middle of a Linked List**
-- **Cycle Detection (Floyd's Algorithm)**
+## 🔥 EXAM ESSENTIALS (MOST IMPORTANT)
+- **Create a Singly Linked List**
+- **Insert: At Beginning ⭐, At End ⭐, At Position ⭐**
+- **Delete: From Beginning, End, and Position ⭐**
+- **Traverse Linked List**
+- **Reverse a Linked List** ⭐⭐
+- **Find Middle Element**
+- **Count Number of Nodes**
+- **Search Element in List**
 
 ## C-Specific Tips
 > [!WARNING]

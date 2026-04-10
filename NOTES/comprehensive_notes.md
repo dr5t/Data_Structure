@@ -80,36 +80,175 @@ Stashing previously calculated values in an array so you never calculate the sam
 - **Print nth**: Just call the function once for $n$.
 - **Print series**: Wrap the iterative logic in a loop or modify the iterative function to print `curr` at each step.
 
-#### Time Complexity Comparison
-| Method | Time Complexity | Space Complexity | Recommendation |
-| :--- | :--- | :--- | :--- |
-| **Recursive** | $O(2^n)$ | $O(n)$ (Stack) | Avoid for $n > 30$. |
-| **Iterative** | $O(n)$ | $O(1)$ | **Best for Exams.** |
-| **DP** | $O(n)$ | $O(n)$ (Array) | Use for repeated queries. |
+#### 4. Factorial Call Stack (Dry Run)
+**Logic**: `fact(n) = n * fact(n-1)`.
+**Trace for `fact(3)`**:
+1. `fact(3)` calls `fact(2)`
+2. `fact(2)` calls `fact(1)` (Base Case reached, returns 1)
+3. `fact(2)` becomes `2 * 1 = 2`
+4. `fact(3)` becomes `3 * 2 = 6` (Final Result)
+
+#### 5. Reverse a Number Recursively
+**Steps**:
+1. If number is 0, return.
+2. Print `n % 10` (last digit).
+3. Call function with `n / 10`.
 
 ### Sorting: Bubble vs Insertion
--   **Bubble Sort**: Compare adjacent elements and swap them if they are in the wrong order. Repeat until the largest "bubbles" to the end.
--   **Insertion Sort**: Like sorting playing cards in your hand. Pick an element and insert it into its correct position in the "sorted portion" on the left.
+
+#### 1. Bubble Sort (Pass-by-Pass)
+**Example**: `[5, 1, 4]`
+- **Pass 1**:
+  - Compare `5, 1` → Swap: `[1, 5, 4]`
+  - Compare `5, 4` → Swap: `[1, 4, 5]` (Large element `5` is at the end)
+- **Pass 2**:
+  - Compare `1, 4` → No swap: `[1, 4, 5]`
+- **Result**: `[1, 4, 5]`
+
+#### 2. Insertion Sort (The "Card" Way)
+**Example**: `[5, 1, 4]`
+1. **Initial**: `[5 | 1, 4]` (left side is sorted)
+2. **Insert 1**: Compare `1` with `5`. Pull `1` to the front: `[1, 5 | 4]`
+3. **Insert 4**: Compare `4` with `5`. Pull `4` between `1` and `5`: `[1, 4, 5 | ]`
+4. **Result**: `[1, 4, 5]`
 
 ---
 
 ## 3. Summaries of Key Data Structures
 
-### Arrays
-- **Definition**: Collection of similar types stored in contiguous memory.
-- **Operations**: Insertion and Deletion take $O(n)$ time because elements might need to be shifted.
+---
 
-### Linked Lists
-- **Definition**: A sequence of nodes where each node contains data and a pointer to the next node.
-- **Insertion/Deletion**: Very fast ($O(1)$) if you already have a pointer to the location, as no shifting is required.
+## 5. Arrays (Exam Essentials)
 
-### Stacks (LIFO)
-- **Operations**: `Push` (Add to top), `Pop` (Remove from top).
-- **Application**: Balanced Parentheses - Use a stack to remember which brackets are currently open.
+### A. Insert at Position
+**Steps**:
+1. Increase array size.
+2. Shift elements from `index` to `n-1` to the right.
+3. Insert `new_element` at `index`.
+```c
+for (int i = n; i > pos; i--)
+    arr[i] = arr[i - 1];
+arr[pos] = val;
+```
+**Dry Run**: `arr = [1, 2, 4], pos = 2, val = 3`
+- Shift `arr[2]` to `arr[3]`: `[1, 2, 4, 4]`
+- Place `3` at `index 2`: `[1, 2, 3, 4]`
 
-### Queues (FIFO)
-- **Operations**: `Enqueue` (Add to back), `Dequeue` (Remove from front).
-- **Circular Queue**: Connects the end back to the front to save space in array implementations.
+### B. Delete from Position
+**Steps**:
+1. Shift elements from `index + 1` to `n-1` to the left.
+2. Decrease array size.
+```c
+for (int i = pos; i < n - 1; i++)
+    arr[i] = arr[i + 1];
+```
+
+### C. Find Second Largest
+**Steps**:
+1. Initialize `large` and `second` as very small values.
+2. If `arr[i] > large`, update `second = large` and `large = arr[i]`.
+3. Else if `arr[i] > second` and `arr[i] != large`, update `second = arr[i]`.
+
+### D. Rotate Array (Right by 1)
+**Steps**:
+1. Store last element in `temp`.
+2. Shift all elements to the right.
+3. Put `temp` at the first position.
+```c
+int temp = arr[n-1];
+for(int i=n-1; i>0; i--) arr[i] = arr[i-1];
+arr[0] = temp;
+```
+
+### E. Merge Two Arrays
+**Steps**:
+1. Create a third array of size `n1 + n2`.
+2. Copy elements of first array into it.
+3. Copy elements of second array into it starting from `n1`.
+
+---
+
+## 6. Linked List (Must Practice)
+
+### A. Insert at Position
+**Steps**:
+1. Create new node.
+2. Traverse to `index - 1`.
+3. Set `newNode->next = current->next`.
+4. Set `current->next = newNode`.
+```c
+struct Node* temp = head;
+for(int i=0; i<pos-1; i++) temp = temp->next;
+newNode->next = temp->next;
+temp->next = newNode;
+```
+
+### B. Delete Position
+**Steps**:
+1. Traverse to `index - 1`.
+2. Store `nodeToDelete = current->next`.
+3. Set `current->next = nodeToDelete->next`.
+4. `free(nodeToDelete)`.
+
+### C. Reverse a Linked List (Dry Run)
+**Logic**: Using 3 pointers: `prev`, `curr`, `next`.
+```c
+while (curr != NULL) {
+    next = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = next;
+}
+head = prev;
+```
+**Dry Run**: `1 -> 2 -> 3`
+- `curr=1, next=2`: `1->NULL`, `prev=1, curr=2`
+- `curr=2, next=3`: `2->1`, `prev=2, curr=3`
+- `curr=3, next=NULL`: `3->2`, `prev=3, curr=NULL`
+- Result: `3 -> 2 -> 1`
+
+### D. Find Middle Element (Tortoise & Hare)
+**Steps**:
+1. `slow = head, fast = head`.
+2. While `fast != NULL` and `fast->next != NULL`:
+   - `slow = slow->next` (1 step)
+   - `fast = fast->next->next` (2 steps)
+3. `slow` is now at the middle.
+
+---
+
+## 7. Stack & Queue (Common Questions)
+
+### A. Stack Operations
+- **Push**: `top++; arr[top] = x;`
+- **Pop**: `x = arr[top]; top--; return x;`
+- **Overflow**: `top == MAX - 1`
+- **Underflow**: `top == -1`
+
+### B. Circular Queue Implementation
+**Steps**:
+1. Circular Increment: `(index + 1) % MAX`.
+2. **Enqueue**:
+   - `rear = (rear + 1) % MAX`
+   - `arr[rear] = val`
+3. **Dequeue**:
+   - `val = arr[front]`
+   - `front = (front + 1) % MAX`
+4. **Full Condition**: `(rear + 1) % MAX == front`.
+5. **Empty Condition**: `front == -1`.
+
+### C. Balanced Parentheses (Using Stack)
+**Logic**: 
+- Push opening brackets `( { [` onto stack.
+- When closing bracket `) } ]` appears, pop top and check if they match.
+- If stack is empty at end, it's balanced.
+
+### D. Infix to Postfix (Basic Idea)
+**Logic**:
+- Operands: Print directly.
+- Operators: Use stack. If operator in hand has higher precedence than `top`, push. Else, pop and print until precedence is lower.
+- Opening Bracket: Push.
+- Closing Bracket: Pop until matching opening bracket.
 
 ---
 
