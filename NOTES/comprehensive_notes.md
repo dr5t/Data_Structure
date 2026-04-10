@@ -336,6 +336,36 @@ head = prev;
 
 ---
 
+## 7.5 Beyond Syllabus: High-Weightage Stack Patterns
+
+### 1. Monotonic Stack ⭐⭐⭐
+A stack where elements are always in a specific order (increasing or decreasing).
+- **Use case**: Finding the **Next Greater Element** or **Largest Rectangle in Histogram**.
+- **Logic**: When a new element arrives, pop all elements from the stack that violate the order, then push the new element.
+
+### 2. Min-Stack Logic ⭐⭐⭐
+A stack that keeps track of the minimum element in $O(1)$ time.
+- **Two-Stack Approach**: Use one stack for data and a second `minStack` where each level stores the minimum seen so far.
+- **Efficiency**: Standard `push`/`pop` operations remain $O(1)$.
+
+---
+
+## 7.6 Advanced Queue Logic: Circular Tour (Gas Station)
+
+**Problem**: Given $N$ gas stations in a circle, find a starting point to complete the full loop.
+1. Use a **Queue-like** logic to maintain the `currentBalance`.
+2. If `currentBalance` becomes negative at a station, reset the start point to the **next station** and reset balance.
+3. Keep track of the `totalBalance` (sum of all fuel - sum of all cost). If `totalBalance < 0`, no tour is possible.
+
+---
+
+## 7.7 Strategy: Stack vs Queue for Reversals
+- **Stack for Array Reversal**: $O(n)$ time, $O(n)$ space.
+- **Queue for BFS**: Explores neighbor-by-neighbor in $O(n)$.
+- **Tip**: To reverse a Queue, you MUST use a Stack (or Recursion).
+
+---
+
 ## 8. Trees (The 5-Level Roadmap)
 
 ### Level 1: Basics (Foundation)

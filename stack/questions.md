@@ -18,11 +18,27 @@ Stacks are a fundamental LIFO (Last-In-First-Out) data structure. Explore implem
 - **Sort a Stack:** Sort the elements of a stack using recursion or another temporary stack.
 - **Implement Queue using Stacks:** How can you implement a FIFO queue using two stacks?
 
-## 4. Advanced Challenges
-- **Next Greater Element:** For each element in an array, find the first greater element on its right side in $O(n)$ time.
-- **Largest Rectangle in Histogram:** Find the area of the largest rectangle that can be formed within a given histogram.
-- **Stock Span Problem:** Calculate the stock span for each day given daily prices.
 - **Min-Stack:** Design a stack that supports `push`, `pop`, `top`, and `getMin` in constant $O(1)$ time.
+
+---
+
+## 🌳 BEYOND SYLLABUS (MASTER SET)
+
+### 1. Pattern Mastery (High Efficiency)
+- **Monotonic Stack ⭐⭐⭐**: For a given array, find the **Next Greater Element** to the right for every element in $O(n)$.
+- **Min-Stack Implementation**: Create a stack that retrieves the minimum element in $O(1)$ time without searching.
+- **Valid Parentheses (Advanced)**: Check if an expression with multiple bracket types is balanced.
+
+### 2. Logic & Applications
+- **Largest Rectangle in Histogram ⭐⭐**: Given an array of heights, find the largest area of a rectangle that can be formed in the histogram in $O(n)$.
+- **Stock Span Problem**: Calculate the span of stock price for all $N$ days.
+- **Circular Tour (Gas Station)**: Find the starting point to complete the full circular tour of $N$ gas stations.
+
+### 3. Professional Variations
+- **Implement Stack using One Queue**: (Logic) Use recursion to pull the last element of the queue to the front.
+- **Sort Stack using Recursion**: Write a program to sort a stack without using loops or extra data structures (other than recursion).
+
+---
 
 ## 🔥 EXAM ESSENTIALS (VERY COMMON)
 - **Implement Stack using Array**
