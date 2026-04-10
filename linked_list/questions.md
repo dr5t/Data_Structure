@@ -28,10 +28,27 @@ This document covers questions for Singly, Doubly, and Circular Linked Lists, wi
 - **Circular singly LL:** Create a list where the last node points to the head. Implement traversal (use a `do-while` loop).
 - **Split Circular List:** Divide a circular linked list into two halves.
 
-## 5. Advanced Challenges
-- **Clone List with Random Pointer:** Deep copy a list where nodes have an extra `random` pointer.
-- **Flattening:** Flatten a multi-level linked list.
 - **LRU Cache:** Implement an LRU cache using a Doubly Linked List for order and a Hash Map (or simplified array-based hash) for access.
+
+---
+
+## 🌳 BEYOND SYLLABUS (MASTER SET)
+
+### 1. Pointer Mastery (High Efficiency)
+- **Detect & Remove Loop ⭐⭐⭐**: Write a program to find if a cycle exists, locate the start, and break the loop.
+- **Find Intersection Point**: Given two lists, find the node where they merge without extra space (using differential length).
+- **Reverse in Groups of K ⭐⭐**: Given a list and a number `k`, reverse every group of `k` nodes.
+
+### 2. Logic & Variations
+- **Circular Check**: Determine if a Singly Linked List is circular.
+- **Segregate Even & Odd**: Rearrange the list such that all even nodes appear before odd nodes (maintaining relative order).
+- **Merge Two Sorted Lists (In-place)**: Merge two lists without creating new nodes.
+
+### 3. Professional Patterns
+- **Sentinel Node Deletion**: Remove all nodes with value `val` from a linked list using a dummy head.
+- **Flattening**: Flatten a list where each node also has a `child` pointer to another list.
+
+---
 
 ## 🔥 EXAM ESSENTIALS (MOST IMPORTANT)
 - **Create a Singly Linked List**

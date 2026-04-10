@@ -212,7 +212,47 @@ A fast way to find the XOR sum from $1 \dots n$ without a loop:
 
 ---
 
-## 6. Linked List (Must Practice)
+## 6.1 Beyond Syllabus: High-Weightage Linked List Patterns
+
+### 1. Fast & Slow Pointers (Floyd's Algorithm) ⭐⭐⭐
+Uses two pointers moving at different speeds (`fast = 2 steps, slow = 1 step`).
+- **Use case**: Finding **Middle of List**, **Cycle Detection**, and **Cycle Start Point**.
+- **Logic**: If they meet, there is a cycle. After meeting, reset `slow` to `head` and move both 1 step at a time; they will meet at the **Start of the Loop**.
+
+### 2. In-place Reversal ⭐⭐⭐
+Reversing the links without creating new nodes.
+- **The 3-Pointer Dance**: Maintain `prev`, `curr`, and `next`.
+  - `next = curr->next;`
+  - `curr->next = prev;`
+  - `prev = curr;`
+  - `curr = next;`
+
+### 3. Sentinel (Dummy) Nodes ⭐⭐
+A dummy node placed at the head of the list.
+- **Why?** It avoids checking `if (head == NULL)` repeatedly and simplifies edge cases (like deleting the first node).
+
+---
+
+## 6.2 Loop Detection & Removal Logic
+
+**Problem**: A list has a cycle. Find it and break it.
+1.  **Detect**: Use Fast & Slow pointers. If `fast == slow`, loop exists.
+2.  **Find Start**: Keep `fast` where they met, move `slow` to `head`. Move both 1 step until they meet again. That's the **loop entry**.
+3.  **Break**: Find the node that points back to the loop entry and set its `next` to `NULL`.
+
+---
+
+## 6.3 Advanced Variations
+
+### 1. Circular Doubly Linked List
+Useful for structures like **Music Playlists** where you want to loop back to the start or go back to the previous song in one step.
+
+### 2. XOR Linked List (Bonus Insight)
+A memory-efficient Doubly Linked List that uses only **one pointer field** per node.
+- Each node stores `XOR(Address of Prev, Address of Next)`.
+- To traverse, you XOR the stored value with the address of the previous node.
+
+---
 
 ### A. Insert at Position
 **Steps**:
