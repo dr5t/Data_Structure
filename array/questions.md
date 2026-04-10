@@ -38,6 +38,12 @@ This document contains a curated list of array problems, ranging from basic oper
 - **Dutch National Flag Problem:** Sort an array containing only 0s, 1s, and 2s in $O(n)$ time.
 - **Trapping Rain Water:** Given an array of heights, calculate how much water it can trap after raining.
 
+## 🔥 MOST IMPORTANT REPEATABLE QUESTIONS
+- **Binary Search (with dry run/trace)**
+- **Bubble Sort**
+- **Insertion Sort**
+- **Array Insertion & Deletion**
+
 ## C-Specific Tips
 > [!TIP]
 > - Always remember that arrays in C do not store their size. Pass the size as a separate parameter to functions.
