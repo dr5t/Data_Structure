@@ -44,9 +44,48 @@ An **ADT** is a mathematical model for data types where the data type is defined
 3.  **Step 2**: `low = 3`, `high = 5`. `mid = (3+5)/2 = 4`. `arr[4]` is `9`. Since `9 > 7`, move `high` to `mid - 1 = 3`.
 4.  **Step 3**: `low = 3`, `high = 3`. `mid = (3+3)/2 = 3`. `arr[3]` is `7`. **Match Found!**
 
-### Fibonacci (Recursive vs Iterative)
--   **Recursive**: Calls itself. Easy to write, but slow ($O(2^n)$) because it re-calculates the same values many times.
--   **Iterative**: Uses a loop. Much faster ($O(n)$) and uses very little memory ($O(1)$).
+### Fibonacci Special Focus (Must Practice)
+Fibonacci is a sequence where each number is the sum of the two preceding ones ($0, 1, 1, 2, 3, 5, 8, \dots$).
+
+#### 1. Recursive Solution (The "Conceptual" way)
+```c
+int fib(int n) {
+    if (n <= 1) return n;
+    return fib(n-1) + fib(n-2);
+}
+```
+- **Pros**: Short and easy to understand.
+- **Cons**: Extremely slow for large $n$ ($O(2^n)$) because it recalculates same values.
+
+#### 2. Iterative Solution (The "Efficient" way)
+```c
+int fib(int n) {
+    int prev=0, curr=1, next;
+    for(int i=2; i<=n; i++) {
+        next = prev + curr;
+        prev = curr;
+        curr = next;
+    }
+    return curr;
+}
+```
+- **Pros**: Fastest performance ($O(n)$) and uses least memory ($O(1)$).
+- **Cons**: Requires managing multiple variables.
+
+#### 3. Optimized (DP - Memoization)
+Stashing previously calculated values in an array so you never calculate the same term twice.
+- **Complexity**: $O(n)$ time and $O(n)$ space.
+
+#### Exam Twist: Printing nth term vs. Series
+- **Print nth**: Just call the function once for $n$.
+- **Print series**: Wrap the iterative logic in a loop or modify the iterative function to print `curr` at each step.
+
+#### Time Complexity Comparison
+| Method | Time Complexity | Space Complexity | Recommendation |
+| :--- | :--- | :--- | :--- |
+| **Recursive** | $O(2^n)$ | $O(n)$ (Stack) | Avoid for $n > 30$. |
+| **Iterative** | $O(n)$ | $O(1)$ | **Best for Exams.** |
+| **DP** | $O(n)$ | $O(n)$ (Array) | Use for repeated queries. |
 
 ### Sorting: Bubble vs Insertion
 -   **Bubble Sort**: Compare adjacent elements and swap them if they are in the wrong order. Repeat until the largest "bubbles" to the end.
