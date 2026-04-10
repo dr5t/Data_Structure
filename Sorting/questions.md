@@ -16,9 +16,10 @@
 - **Sort K Sorted Array:** Find how to sort an array where each element is $k$ positions away from its sorted position.
 - **Kth Smallest Element:** Find the $k^{th}$ smallest element using quick-select.
 
-## 🔥 MOST IMPORTANT REPEATABLE QUESTIONS
-- **Binary Search (with dry run/trace)**
-- **Bubble Sort**
-- **Insertion Sort**
-- **Merge Sort**
-- **Quick Sort**
+## 🔥 EXAM ESSENTIALS (SEARCHING & SORTING)
+- **Linear Search**
+- **Binary Search** ⭐⭐
+- **Bubble Sort** ⭐
+- **Insertion Sort** ⭐
+- **Selection Sort**
+- **Algorithm Tracing / Dry Run** ⭐
