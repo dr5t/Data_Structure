@@ -252,9 +252,101 @@ head = prev;
 
 ---
 
-## 4. Most Repeatable Exam Questions
-1.  Binary Search implementation + Dry Run.
-2.  Linked List Reversal.
-3.  Circular Queue implementation steps.
-4.  Balanced Parentheses checking using Stack.
-5.  Comparison of Recursive vs Iterative Fibonacci.
+## 8. Trees (The 5-Level Roadmap)
+
+### Level 1: Basics (Foundation)
+- **Node Structure**: Contains `data`, and pointers to `left` and `right`.
+- **Traversals (In/Pre/Post)**:
+    - **Inorder**: Left → Root → Right (Gives sorted order for BST).
+    - **Preorder**: Root → Left → Right.
+    - **Postorder**: Left → Right → Root.
+- **Dry Run (Inorder)**: `[1, 2, 3]` (Binary Tree)
+    - Visit `2`, Visit `1`, Visit `3` → `2 1 3`.
+
+### Level 2: Binary Search Tree (BST)
+- **Insertion**: Compare `key` with `root`. If smaller, go left. If larger, go right.
+- **Searching**: Standard Binary Search logic applied to nodes.
+- **Deletion (The 3 Case Rule)**:
+    1. **Leaf**: Simply delete the node.
+    2. **One Child**: Link the parent directly to the child.
+    3. **Two Children**: Replace node with **Inorder Successor** (smallest in right subtree) or Predecessor.
+
+### Level 3: Intermediate Logic
+- **Mirroring**: Swap the left and right pointers of every node.
+- **Level Order Traversal (BFS)**: Uses a **Queue**.
+    - Push Root → Pop Root → Push Left/Right children → Repeat.
+- **Check BST**: Ensure every node's value is within its allowed [min, max] range.
+
+### Level 4: Advanced Mastery
+- **Lowest Common Ancestor (LCA)**: The shared ancestor furthest from the root.
+- **Height-Balanced**: For every node, $|Height(Left) - Height(Right)| \le 1$.
+- **Diameter**: The longest path between any two nodes.
+
+### Level 5: Hard / Interview Concepts
+- **Zig-zag Traversal**: Use two stacks to change directions at each level.
+- **Construct from Traversals**: Use Preorder to find Root and Inorder to find Left/Right boundaries.
+
+---
+
+## 9. Graphs (Complete Mastery Roadmap)
+
+### Level 1: Graph Representation
+- **Adjacency Matrix**: A 2D array `adj[V][V]` where `adj[i][j] = 1` if there is an edge.
+    - *Pros*: Fast edge check ($O(1)$).
+    - *Cons*: Uses more space ($O(V^2)$).
+- **Adjacency List**: An array of linked lists. Each `adj[i]` stores neighbors of `i`.
+    - *Pros*: Space-efficient for sparse graphs ($O(V+E)$).
+
+### Level 2: Traversals (BFS & DFS) ⭐⭐⭐
+- **BFS (Breadth First Search)**: Uses a **Queue**. Explores neighbor-by-neighbor.
+    - *Logic*: Push Source → Pop → Mark Visited → Push Unvisited Neighbors → Repeat.
+- **DFS (Depth First Search)**: Uses a **Stack** (or Recursion). Explores as deep as possible.
+    - *Logic*: Visit Node → Mark Visited → Recurse for Unvisited Neighbors.
+
+### Level 3: Intermediate Logic
+- **Cycle Detection**:
+    - **Undirected**: Use DFS; if you find a visited neighbor that is NOT the parent, it's a cycle.
+    - **Directed**: Use DFS; if you find a node currently in the **Recursion Stack**, it's a cycle.
+- **Connected Components**: Total number of separate "islands" in the graph. Found by counting how many times you need to start a new BFS/DFS to visit all nodes.
+
+### Level 4: Advanced Algorithms
+- **Topological Sort**: A linear ordering of vertices such that for every directed edge $uv$, $u$ comes before $v$. (Only for DAGs).
+- **Dijkstra's Algorithm**: Finds the shortest path from a source to all other nodes in a weighted graph (no negative weights).
+- **Minimum Spanning Tree (MST)**: 
+    - **Prim's**: Grows the tree from a starting node by picking the smallest edge connected to the current tree.
+    - **Kruskal's**: Sorts all edges and adds them if they don't form a cycle.
+
+### Level 5: Hard / Interview Mastery
+- **Bellman-Ford**: Shortest path (handles negative weights).
+- **Floyd-Warshall**: All-pairs shortest path ($O(V^3)$).
+- **Kosaraju's Algorithm**: Finds Strongly Connected Components in 3 steps (DFS Stack → Transpose → DFS).
+
+---
+
+## 10. Hashing (Fast Access)
+
+### Collision Resolution Strategies
+1. **Open Addressing** (Linear Probing): If index `H(k)` is full, try `(H(k)+1) % size`.
+    - *Cons*: Primary clustering (elements bunch together).
+2. **Chaining**: Every cell of the hash table is a linked list. Multiple keys at the same index are added to the list.
+    - *Pros*: Never "fills up" conceptually; easier to handle deletions.
+
+---
+
+## 🚀 THE GRAND MASTER COMPLEXITY TABLE
+
+Use this table for 1-minute revision before the exam:
+
+| Data Structure | Access | Search | Insertion | Deletion | Space |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Array** | $O(1)$ | $O(n)$ | $O(n)$ | $O(n)$ | $O(n)$ |
+| **Stack** | $O(n)$ | $O(n)$ | $O(1)$ | $O(1)$ | $O(n)$ |
+| **Queue** | $O(n)$ | $O(n)$ | $O(1)$ | $O(1)$ | $O(n)$ |
+| **Linked List** | $O(n)$ | $O(n)$ | $O(1)$ | $O(1)$ | $O(n)$ |
+| **Binary Search Tree** | $O(\log n)$ | $O(\log n)$ | $O(\log n)$ | $O(\log n)$ | $O(n)$ |
+| **Hash Table** | N/A | $O(1)$ | $O(1)$ | $O(1)$ | $O(n)$ |
+| **Graph** | N/A | $O(V+E)$ | $O(1)$ | $O(1)$ | $O(V+E)$ |
+
+> [!IMPORTANT]
+> - Hash Table worst-case search is $O(n)$ (if all keys collide).
+> - BST worst-case is $O(n)$ if the tree is skewed (looks like a linked list).

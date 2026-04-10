@@ -49,6 +49,56 @@ void inorder(struct Node* root) {
     }
 }
 
+// Find the node with the minimum value (successor finding)
+struct Node* minValueNode(struct Node* node) {
+    struct Node* current = node;
+    while (current && current->left != NULL)
+        current = current->left;
+    return current;
+}
+
+// Find the node with the maximum value
+struct Node* maxValueNode(struct Node* node) {
+    struct Node* current = node;
+    while (current && current->right != NULL)
+        current = current->right;
+    return current;
+}
+
+// Delete a value from BST
+struct Node* deleteNode(struct Node* root, int key) {
+    if (root == NULL) return root;
+
+    // Search for the node to be deleted
+    if (key < root->data)
+        root->left = deleteNode(root->left, key);
+    else if (key > root->data)
+        root->right = deleteNode(root->right, key);
+    else {
+        // CASE 1 & 2: Node with only one child or no child
+        if (root->left == NULL) {
+            struct Node* temp = root->right;
+            free(root);
+            return temp;
+        } else if (root->right == NULL) {
+            struct Node* temp = root->left;
+            free(root);
+            return temp;
+        }
+
+        // CASE 3: Node with two children
+        // Get the inorder successor (smallest in the right subtree)
+        struct Node* temp = minValueNode(root->right);
+
+        // Copy the inorder successor's content to this node
+        root->data = temp->data;
+
+        // Delete the inorder successor
+        root->right = deleteNode(root->right, temp->data);
+    }
+    return root;
+}
+
 int main() {
     struct Node* root = NULL;
     root = insert(root, 50);
@@ -59,15 +109,24 @@ int main() {
     insert(root, 60);
     insert(root, 80);
 
-    printf("In-order traversal of BST: ");
+    printf("Original In-order traversal: ");
     inorder(root);
     printf("\n");
 
-    int key = 60;
-    if (search(root, key) != NULL)
-        printf("%d found in BST.\n", key);
-    else
-        printf("%d not found in BST.\n", key);
+    printf("Min value in BST: %d\n", minValueNode(root)->data);
+    printf("Max value in BST: %d\n", maxValueNode(root)->data);
+
+    printf("\nDeleting 20 (Leaf)...\n");
+    root = deleteNode(root, 20);
+    inorder(root); printf("\n");
+
+    printf("Deleting 30 (One child)...\n");
+    root = deleteNode(root, 30);
+    inorder(root); printf("\n");
+
+    printf("Deleting 50 (Two children - Root)...\n");
+    root = deleteNode(root, 50);
+    inorder(root); printf("\n");
 
     return 0;
 }

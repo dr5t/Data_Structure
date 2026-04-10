@@ -1,31 +1,39 @@
-# Graph Practice Questions in C
+# Graph Practice Questions (5-Level Roadmap)
 
-Graphs represent complex relationships between sets of objects. Study representation methods and core traversal algorithms.
+## 🔰 LEVEL 1: BASICS (Foundation)
+- **Adjacency Matrix:** Represent a graph using a 2D integer array. 
+- **Adjacency List:** Represent a graph using an array of linked lists. ⭐⭐⭐
+- **Degree Counting:** For a given node, calculate its in-degree and out-degree.
+- **Identify Types:** Given a graph, identify if it's Directed, Undirected, or Weighted.
 
-## 1. Representation
-- **Adjacency Matrix:** Implement a graph using a 2D array. Compare its space complexity with an adjacency list.
-- **Adjacency List:** Implement a graph using an array of linked lists. This is the more common and efficient representation for sparse graphs.
+## ⚙️ LEVEL 2: TRAVERSAL (MOST IMPORTANT)
+- **BFS (Breadth First Search) ⭐⭐⭐:** Implement using a queue and print nodes.
+- **DFS (Depth First Search) ⭐⭐⭐:** Implement using recursion/stack and print nodes.
+- **Algorithm Trace:** Manually trace BFS and DFS for a 4-node graph.
 
-## 2. Core Traversals
-- **Breadth-First Search (BFS):** Implement BFS starting from a given source node. Use a queue and a `visited` array.
-- **Depth-First Search (DFS):** Implement DFS (both recursive and iterative versions).
+## 🧠 LEVEL 3: INTERMEDIATE
+- **Cycle Detection ⭐⭐:** 
+  - Find a cycle in an Undirected Graph (using DFS).
+  - Find a cycle in a Directed Graph (using recursion stack).
+- **Connected Components ⭐⭐:** Count the number of disjoint "islands" in a graph.
+- **Path Existence:** Determine if a path exists between two nodes $(u, v)$.
+- **Shortest Path (Unweighted):** Use BFS logic to find the shortest path between two nodes.
 
-## 3. Connections & Cycles
-- **Find Path:** Determine if a path exists between two nodes `U` and `V`.
-- **Cycle Detection (Undirected):** Detect if a cycle exists in an undirected graph using BFS or DFS.
-- **Cycle Detection (Directed):** Detect if a cycle exists in a directed graph (requires keeping track of nodes in the current recursion stack).
-- **Connected Components:** Find the number of connected components in an undirected graph.
+## 🚀 LEVEL 4: ADVANCED (Core Strength)
+- **Topological Sort ⭐⭐⭐:** Generate a linear ordering for a directed acyclic graph (DAG).
+- **Dijkstra's Algorithm ⭐⭐⭐:** Find the shortest distance from a single source in a weighted graph.
+- **Minimum Spanning Tree (MST):**
+  - **Prim's Algorithm ⭐⭐:** Grow a spanning tree greedily.
+  - **Kruskal's Algorithm ⭐⭐:** Use edge sorting and cycle checks.
 
-## 4. Shortest Path Algorithms
-- **Shortest Path in Unweighted Graph:** Use BFS to find the shortest path between two nodes.
-- **Dijkstra’s Algorithm (Basics):** Discuss the logic of finding the shortest path in a weighted graph with non-negative weights.
+## 🔥 LEVEL 5: HARD / INTERVIEW
+- **Bellman-Ford Algorithm:** Handle shortest paths with negative weights.
+- **Floyd-Warshall:** Find shortest paths between all pairs of vertices.
+- **Strongly Connected Components:** Use Kosaraju's Algorithm (two-pass DFS).
 
-## 5. Advanced Challenges
-- **Topological Sort:** Perform topological sorting on a Directed Acyclic Graph (DAG) using Kahn's Algorithm or DFS.
-- **Check Bipartite:** Determine if a graph can be colored using only two colors such that no two adjacent nodes have the same color.
-- **Mother Vertex:** Find a vertex from which all other vertices are reachable.
-
-## C-Specific Tips
-> [!CAUTION]
-> - Adjacency lists involve dynamic allocation for each edge. Ensure you handle `malloc` failures and `free` all nodes when the graph is destroyed.
-> - Be mindful of large graphs; an adjacency matrix of size $10^5 \times 10^5$ will easily exceed memory limits.
+## 🎯 GRAPH "DO OR DIE" MASTER SET
+1. **Graph Representation** ⭐⭐⭐
+2. **BFS** ⭐⭐⭐
+3. **DFS** ⭐⭐⭐
+4. **Cycle Detection** ⭐⭐
+5. **Topological Sort** ⭐⭐

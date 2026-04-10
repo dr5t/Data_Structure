@@ -1,38 +1,44 @@
-# Tree Practice Questions in C
+# Tree Practice Questions (5-Level Roadmap)
 
-Explore hierarchical data structures, focusing on Binary Trees and Binary Search Trees (BSTs).
+## 🔰 LEVEL 1: BASICS (Foundation)
+- **Node Implementation:** Define a `struct Node` with `left`, `right`, and `data`.
+- **Traversals ⭐⭐⭐:** Implement Inorder, Preorder, and Postorder recursively.
+- **Node Counting:**
+  - Count Total Nodes.
+  - Count Leaf Nodes (nodes with no children).
+  - Count Non-leaf Nodes.
+- **Height of Tree ⭐⭐⭐:** Find the maximum depth of the tree.
+- **Search:** Find if an element exists in a simple Binary Tree.
 
-## 1. Implementation & Traversals
-- **Node Definition:** Define a `struct Node` with `int data`, and pointers to `left` and `right`.
-- **DFS Traversals:** Implement In-order, Pre-order, and Post-order traversals recursively.
-- **BFS Traversal (Level-Order):** Print elements level by level (requires a queue).
-- **Iterative Traversal:** Challenge yourself by implementing In-order traversal using a stack instead of recursion.
+## ⚙️ LEVEL 2: BINARY SEARCH TREE (CORE + EXAM)
+- **BST Insertion ⭐⭐⭐:** Create a BST from a set of values.
+- **BST Searching ⭐⭐⭐:** Find a value in a BST in $O(log n)$ average time.
+- **BST Deletion ⭐⭐⭐:** Implement deletion for all cases:
+  - Case 1: Leaf node.
+  - Case 2: Node with one child.
+  - Case 3: Node with two children (Inorder Successor).
+- **Min/Max in BST:** Find the smallest and largest elements.
 
-## 2. Basic Properties
-- **Tree Height:** Find the maximum depth/height of the tree.
-- **Node Count:** Count the total number of nodes in the tree.
-- **Leaf Count:** Count the number of leaf nodes (nodes with no children).
-- **Check Balance:** Determine if a binary tree is height-balanced.
+## 🧠 LEVEL 3: INTERMEDIATE (Logic Building)
+- **Mirror Image ⭐:** Convert a tree to its mirror version.
+- **Check if BST ⭐⭐:** Validate whether a Binary Tree satisfies BST properties.
+- **Level Order Traversal (BFS) ⭐⭐⭐:** Print tree level-by-level using a Queue.
+- **Nodes at Level K:** Count or print all nodes at distance $k$ from root.
 
-## 3. Binary Search Trees (BST)
-- **Insert & Search:** Implement functions to insert a value and search for a value in a BST.
-- **Deletion:** Implement the logic to delete a node from a BST (consider all cases: leaf, one child, two children).
-- **Validate BST:** Check if a given binary tree is a valid BST.
-- **Min/Max in BST:** Find the smallest and largest elements in a BST ($O(h)$ time).
+## 🚀 LEVEL 4: ADVANCED (High-Level Mastery)
+- **Lowest Common Ancestor (LCA) ⭐⭐⭐:** Find the shared ancestor furthest from root.
+- **Diameter of Tree ⭐⭐:** Find the longest path between any two nodes.
+- **Balanced Check ⭐⭐:** Check if $|Height(Left) - Height(Right)| \le 1$ for all nodes.
+- **Path Root-to-Node:** Print the path from root to a target node.
 
-## 4. Intermediate Problems
-- **Lowest Common Ancestor (LCA):** Find the LCA for two given nodes in a Binary Tree and a BST.
-- **Diameter of Tree:** Find the longest path between any two nodes in a tree.
-- **Mirror Tree:** Create the mirror image of a binary tree by swapping left and right children.
-- **Nodes at Distance K:** Print all nodes at distance `K` from the root.
+## 🔥 LEVEL 5: HARD / INTERVIEW
+- **Serialize & Deserialize Tree:** Convert tree to array/string and back.
+- **Construct Tree from Traversals:** Build a unique tree using Inorder and Preorder/Postorder arrays.
+- **Zig-zag Traversal:** Print nodes in alternating left-to-right and right-to-left order.
 
-## 5. Advanced Challenges
-- **Serialize & Deserialize:** Convert a tree into a string/array and back into a tree.
-- **Tree to DLL:** Convert a binary tree to a doubly linked list in-place.
-- **BST from Sorted Array:** Construct a height-balanced BST from a sorted array.
-- **AVL Tree Basics:** Discuss rotation concepts (LL, RR, LR, RL) for maintaining tree balance.
-
-## C-Specific Tips
-> [!IMPORTANT]
-> - Always remember to handle the base case `if (root == NULL)` in recursive functions to avoid segmentation faults.
-> - When deleting nodes, ensure you `free()` the memory to prevent leaks.
+## 🎯 TREE "DO OR DIE" MASTER SET
+1. **Traversals** ⭐⭐⭐
+2. **BST Insert/Delete** ⭐⭐⭐
+3. **Height of Tree** ⭐⭐⭐
+4. **Level Order Traversal** ⭐⭐
+5. **LCA** ⭐⭐
