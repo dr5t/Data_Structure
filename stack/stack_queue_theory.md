@@ -48,3 +48,17 @@ A **Queue** is a linear data structure that follows the **First-In, First-Out (F
 ### Applications
 - **Stack**: Parenthesis checking, Infix-to-Postfix conversion, Function calls (Call Stack).
 - **Queue**: CPU Scheduling (Round Robin), Printer queues, Breadth-First Search (BFS).
+
+---
+
+## 5. Practice Problem Concepts
+### Why Stacks for Parentheses?
+Matching brackets is a **nested** problem. The first bracket opened must be the last one closed. This aligns perfectly with the LIFO property of a stack, where we "pause" the search for a match while we process inner brackets.
+
+### Implementing One Structure using Another
+- **Stack using Queues**: Since a queue is FIFO, we must move all elements to "simulate" the reversal required for LIFO. This usually makes either **Push** or **Pop** an $O(n)$ operation instead of $O(1)$.
+- **Queue using Stacks**: Similar to the stack version, we use the second stack to reverse the order of elements twice, restoring FIFO behavior. This is common in databases (like some versions of Redis) where we want to balance memory and access speed.
+
+### Real-world Deque Application
+The **Sliding Window** problem is a classic case where we need to insert and remove from both ends efficiently. A Deque allows $O(1)$ operations at both ends, making the entire window processing $O(n)$ overall.
+

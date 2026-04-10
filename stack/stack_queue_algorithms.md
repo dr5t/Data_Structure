@@ -49,3 +49,29 @@
    - Remove indices from back if $arr[i] \ge arr[back]$.
    - Add $i$ to back.
    - Front of deque is the max for the current window.
+
+---
+
+## 5. Practice Problem Algorithms
+### Balanced Parentheses
+1. Initialize an empty stack.
+2. Traverse the expression:
+   - If current char is an opening bracket (`(`, `{`, `[`), **Push** it.
+   - If current char is a closing bracket (`)`, `}`, `]`):
+     - If stack is empty, **return False** (Unbalanced).
+     - **Pop** from stack. If the popped bracket doesn't match the closing one, **return False**.
+3. After traversal, if stack is empty, **return True**; else **return False**.
+
+### Stack using Queues (Push-Efficient)
+- **Push(x)**: Perform `enqueue(q1, x)`.
+- **Pop()**: 
+  1. Dequeue all elements from `q1` except the last one and enqueue them into `q2`.
+  2. The remaining element in `q1` is the one to return.
+  3. Swap the names of `q1` and `q2`.
+
+### Queue using Stacks (Enqueue-Efficient)
+- **Enqueue(x)**: Perform `push(s1, x)`.
+- **Dequeue()**:
+  1. If `s2` is empty, pop all elements from `s1` and push them into `s2`.
+  2. Pop from `s2` and return the value.
+
