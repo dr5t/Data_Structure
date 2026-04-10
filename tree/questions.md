@@ -57,13 +57,39 @@
 
 ### 4. Advanced Tree Logic
 - **AVL Single Rotation:** Implement `leftRotate` and `rightRotate`.
-- **Optimization:** Solve "Check if Balanced" in a single $O(n)$ traversal.
+- **Optimization:** Solve "Check if Balanced"👉 If weak here → nothing ahead will work.
 
----
+## 🚀 LEVEL 6: BEYOND SYLLABUS - PATTERNS
+- **Recursive Pattern Mastery:** Solve 5 different tree problems using the same "Bottom-Up" DFS pattern.
+- **Return Values:** Write a function that returns a boolean, an int, and a pair of values (depth and diameter) from recursion.
+- **Top-Down vs Bottom-Up:** Explain the difference with code examples.
+
+## ⚙️ LEVEL 7: BINARY TREE VARIATIONS
+- **Identify Variations:** Write functions to check for:
+  - Full Binary Tree ⭐
+  - Complete Binary Tree ⭐
+  - Perfect Binary Tree ⭐
+- **Skewed Tree Check:** Identify if a tree is left or right skewed.
+
+## 🧠 LEVEL 8: HEAP SPECIAL FOCUS (CORE)
+- **Build Heap:** Implement `build_max_heap()` in $O(n)$ time. ⭐⭐⭐
+- **Heapify:** Implement the `heapify()` function (Down-heap). ⭐⭐⭐
+- **Insert/Delete:** Implement `insert()` and `delete_root()` for a Max-Heap.
+- **Heap Sort:** Sort an array using the Heap algorithm. ⭐⭐
+
+## 🌟 LEVEL 9: ADVANCED TREE TYPES
+- **AVL Logic:** Explain (with diagrams) the 4 types of rotations (LL, RR, LR, RL). ⭐
+- **Trie Basics:** Implement a basic Trie to insert and search for strings. ⭐⭐
+- **Heap Application:** Find the **Kth Largest** element in an array using a Heap. ⭐⭐
+
+## 🔥 LEVEL 10: OPTIMIZATION THINKING
+- **Single Traversal:** Convert an $O(n^2)$ Balanced Tree check into an $O(n)$ "single traversal" solution.
+- **Space Optimization:** Solve a level-order problem using $O(1)$ extra space (if possible).
 
 ## 🎯 TREE "DO OR DIE" MASTER SET
-1. **Traversals** ⭐⭐⭐
+1. **Traversals** (In/Pre/Post) ⭐⭐⭐
 2. **BST Insert/Delete** ⭐⭐⭐
-3. **Height of Tree** ⭐⭐⭐
-4. **Build Max-Heap** ⭐⭐⭐
-5. **LCA** ⭐⭐
+3. **Heapify & Build Heap** ⭐⭐⭐
+4. **Height & Diameter** ⭐⭐⭐
+5. **Level Order Traversal** ⭐⭐
+6. **LCA** ⭐⭐

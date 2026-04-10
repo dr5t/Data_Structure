@@ -327,21 +327,65 @@ head = prev;
 - **Diameter**: The longest path between any two nodes.
 
 ### Level 5: Hard / Interview Concepts
-- **Zig-zag Traversal**: Use two stacks to change directions at each level.
-- **Construct from Traversals**: Use Preorder to find Root and Inorder to find Left/Right boundaries.
+---
+
+## 8. Trees: Beyond Syllabus Expansion
+
+### 🔹 1. Tree Variations (Visual Cheat Sheet)
+Identifying trees is a common exam favorite.
+-   **Full Binary Tree**: Every node has either **0 or 2** children. No node has only 1 child.
+-   **Complete Binary Tree**: Every level is completely filled, except possibly the last, and the last level is filled from **left to right**.
+-   **Perfect Binary Tree**: All internal nodes have two children and all leaf nodes are at the **same level**.
+-   **Skewed Tree**: All nodes have only one child (Left-skewed or Right-skewed). Effectively a Linked List.
+
+### 🔹 2. Heap Mastery (The Priority Queue) ⭐⭐⭐
+A **Heap** is a specialized Complete Binary Tree.
+-   **Max-Heap**: Root is the largest; every parent $\ge$ children.
+-   **Min-Heap**: Root is the smallest; every parent $\le$ children.
+-   **Heapify (The Heart of Heap)**:
+    -   Compare node with its children.
+    -   If child is larger (in Max-Heap), swap and repeat downwards.
+    -   *Complexity*: $O(\log n)$ to fix one node, $O(n)$ to build from scratch.
+-   **Heap Sort**:
+    1.  Build Max-Heap ($O(n)$).
+    2.  Swap Root with Last, reduce size, and Heapify ($O(n \log n)$ total).
+
+### 🔹 3. Tree Patterns (Recursive Thinking)
+Mastering trees means mastering **Recursion Patterns**:
+1.  **DFS Pattern (Bottom-Up)**:
+    -   Compute result for Left Subtree.
+    -   Compute result for Right Subtree.
+    -   Combine them and return to Parent.
+    -   *Use for*: Height, Diameter, Balanced check.
+2.  **BFS Pattern (Level-Wise)**:
+    -   Use a Queue.
+    -   Process node, then push its children.
+    -   *Use for*: Shortest path in unweighted tree, Top-view, Bottom-view.
+
+### 🔹 4. Optimization: Single Traversal Thinking
+Avoid repeated $O(n)$ calls inside a recursive function (which leads to $O(n^2)$).
+-   **Example (Balanced Check)**: Instead of calling `height()` inside `isBalanced()`, make `isBalanced()` return the height *while* checking balance. If unbalanced, return -1.
+
+### 🔹 5. Advanced Previews
+-   **AVL Tree**: Self-balancing BST. Every node maintains a **Balance Factor** ($-1, 0, 1$). Uses **Rotations** (LL, RR, LR, RL) to fix imbalance.
+-   **Trie (Prefix Tree)**: Used for string searching (dictionary, autocomplete). Each node represents a character.
+-   **Heap Sort**: Efficiently finds **Kth Largest** element by extracting Max $K$ times.
 
 ---
 
-## 8.5 Beyond Syllabus: Tree Variations (Visualized)
-
-### 1. Full Binary Tree
-Every node has either **0 or 2 children**. No node has only 1 child.
+## 🎯 TREE "DO OR DIE" MASTER SET
+1. **Traversals** (In/Pre/Post) ⭐⭐⭐
+2. **BST Insert/Delete** ⭐⭐⭐
+3. **Heapify & Build Heap** ⭐⭐⭐
+4. **Height & Diameter** ⭐⭐⭐
+5. **Level Order Traversal** ⭐⭐
+6. **LCA (Lowest Common Ancestor)** ⭐⭐
+*. No node has only 1 child.
 ```text
       ( )           ( )
      /   \         /   \
    ( )   ( )     ( )   ( )
                 /   \
-              ( )   ( )
 ```
 
 ### 2. Complete Binary Tree
