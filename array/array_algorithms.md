@@ -1,6 +1,7 @@
 # Array Algorithms (Step-by-Step)
 
 ## 1. Linear Search Algorithm
+
 **Goal**: Find the position of an element `target` in an array.
 
 1. **Start** from the first element (index 0).
@@ -15,6 +16,7 @@
 ---
 
 ## 2. Binary Search Algorithm (Iterative)
+
 **Prerequisite**: The array MUST be **sorted**.
 
 1. **Set** `low` to 0 and `high` to $n-1$.

@@ -22,17 +22,20 @@ This repository is a curated, student-focused resource designed to help you mast
 ## 🔥 Study Master Tools
 
 ### 1. 📂 [Master Exam Notes](NOTES/comprehensive_notes.md)
+
 The central "Source of Truth" for your ISA. Every core algorithm includes:
 - **Simplified Steps**: Easy to memorize.
 - **Standalone Code Snippets**: Quick implementation.
 - **Dry Run/Traces**: Essential for scoring full marks in theory exams.
 
 ### 2. 🎯 "DO OR DIE" Master Sets
+
 Don't have much time? Every module's `questions.md` features a "DO OR DIE" set with the most high-frequency exam topics (e.g., BST Deletion, Linked List Reversal, Circular Queues).
 
 ---
 
 ## ⚡ Quick Complexity Reference
+
 | Algorithm | Best Time | Worst Time | Space |
 | :--- | :--- | :--- | :--- |
 | **Binary Search** | $O(1)$ | $O(\log n)$ | $O(1)$ |
@@ -43,10 +46,13 @@ Don't have much time? Every module's `questions.md` features a "DO OR DIE" set w
 ---
 
 ## 🛠 Compilation Guide
+
 To run any solution, use the following:
+
 ```bash
 gcc module_name/solutions/filename.c -o solution
 ./solution
+
 ```
 
 *Good luck with your exams!* 🚀
