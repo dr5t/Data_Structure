@@ -100,7 +100,7 @@ void selectionSort(int arr[], int n)
         for (int j = i + 1; j < n; j++)
             if (sorted[j] < sorted[minIdx]) minIdx = j;
         swap(&sorted[i], &sorted[minIdx]);
-        printf("  Pass%2d: "); printArray(sorted, n);
+        printf("  Pass%2d: ", i + 1); printArray(sorted, n);
     }
     printf("  After (sorted): "); printArray(sorted, n);
     printf("  Complexity: O(n²) comparisons, O(n) swaps\n");
@@ -119,7 +119,7 @@ void bubbleSort(int arr[], int n)
         for (int j = 0; j < n - i - 1; j++) {
             if (sorted[j] > sorted[j+1]) { swap(&sorted[j], &sorted[j+1]); swapped = 1; }
         }
-        printf("  Pass%2d: "); printArray(sorted, n);
+        printf("  Pass%2d: ", i + 1); printArray(sorted, n);
         if (!swapped) { printf("  (Early termination – already sorted)\n"); break; }
     }
     printf("  After (sorted): "); printArray(sorted, n);
@@ -138,7 +138,7 @@ void insertionSort(int arr[], int n)
         int key = sorted[i], j = i - 1;
         while (j >= 0 && sorted[j] > key) { sorted[j+1] = sorted[j]; j--; }
         sorted[j+1] = key;
-        printf("  Insert %2d: "); printArray(sorted, n);
+        printf("  Insert %2d: ", i); printArray(sorted, n);
     }
     printf("  After (sorted): "); printArray(sorted, n);
     printf("  Complexity: O(n²) worst, O(n) best\n");
