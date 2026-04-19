@@ -100,8 +100,6 @@ void infixToPostfix(const char *infix, char *postfix)
 
 void traceConversion(const char *infix)
 {
-    char postfix[MAX * 2];
-
     printf("\n  Infix Expression  : %s\n", infix);
 
     /* Trace table */
@@ -110,7 +108,7 @@ void traceConversion(const char *infix)
     printf("  %-6s %-12s %-25s %-25s\n",
            "────", "──────", "─────────────────────────", "─────────────────────────");
 
-    int k = 0, step = 1;
+    int step = 1;
     char postBuf[MAX * 2] = {0};
     int  pb = 0;
     top = -1;
